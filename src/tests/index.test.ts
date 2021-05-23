@@ -12,7 +12,7 @@ describe('Testing Index', () => {
       const indexRoute = new IndexRoute();
       const app = new App([indexRoute]);
 
-      return request(app.getServer()).get(`${indexRoute.path}`).expect(200);
+      return request(app.getServer()).get(`${indexRoute.path}`).set('Authorization', 'Bearer ' + "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNjIxODA0MjY0LCJleHAiOjE2MjE4MDc4NjR9.n9RyX8-UMvTEb_lA01DdgMcFbNeeYU1Q7L7_-oUMYfI").expect(200);
     });
   });
 });

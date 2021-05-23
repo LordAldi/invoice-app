@@ -19,17 +19,20 @@ describe('Testing Users', () => {
         {
           id: 1,
           email: 'a@email.com',
-          password: await bcrypt.hash('q1w2e3r4!', 10),
+        name:"aaaa",
+        password: await bcrypt.hash('q1w2e3r4!', 10),
         },
         {
           id: 2,
           email: 'b@email.com',
-          password: await bcrypt.hash('a1s2d3f4!', 10),
+        name:"bbbb",
+        password: await bcrypt.hash('a1s2d3f4!', 10),
         },
         {
           id: 3,
           email: 'c@email.com',
-          password: await bcrypt.hash('z1x2c3v4!', 10),
+        name:"cccc",
+        password: await bcrypt.hash('z1x2c3v4!', 10),
         },
       ]);
 
@@ -48,6 +51,7 @@ describe('Testing Users', () => {
       users.findUnique = jest.fn().mockReturnValue({
         id: 1,
         email: 'a@email.com',
+        name:"aaaa",
         password: await bcrypt.hash('q1w2e3r4!', 10),
       });
 
@@ -60,6 +64,7 @@ describe('Testing Users', () => {
     it('response Create user', async () => {
       const userData: CreateUserDto = {
         email: 'test@email.com',
+        name:"aaaa",
         password: 'q1w2e3r4',
       };
 
@@ -70,6 +75,7 @@ describe('Testing Users', () => {
       users.create = jest.fn().mockReturnValue({
         id: 1,
         email: userData.email,
+        name:userData.name,
         password: await bcrypt.hash(userData.password, 10),
       });
 
@@ -83,6 +89,7 @@ describe('Testing Users', () => {
       const userId = 1;
       const userData: CreateUserDto = {
         email: 'test@email.com',
+        name:"test",
         password: 'q1w2e3r4',
       };
 
@@ -92,11 +99,13 @@ describe('Testing Users', () => {
       users.findUnique = jest.fn().mockReturnValue({
         id: userId,
         email: userData.email,
+        name:userData.name,
         password: await bcrypt.hash(userData.password, 10),
       });
       users.update = jest.fn().mockReturnValue({
         id: userId,
         email: userData.email,
+        name:userData.name,
         password: await bcrypt.hash(userData.password, 10),
       });
 
@@ -110,6 +119,7 @@ describe('Testing Users', () => {
       const userId = 1;
       const userData: CreateUserDto = {
         email: 'test@email.com',
+        name:"test",
         password: 'q1w2e3r4',
       };
 
@@ -119,11 +129,13 @@ describe('Testing Users', () => {
       users.findUnique = jest.fn().mockReturnValue({
         id: userId,
         email: userData.email,
+        name:userData.name,
         password: await bcrypt.hash(userData.password, 10),
       });
       users.delete = jest.fn().mockReturnValue({
         id: userId,
         email: userData.email,
+        name:userData.name,
         password: await bcrypt.hash(userData.password, 10),
       });
 
