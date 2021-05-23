@@ -1,6 +1,0 @@
-2021-05-23 02:43:27 error: [GET] /users >> StatusCode:: 500, Message:: 
-Invalid `prisma.user.findMany()` invocation:
-
-
-  The table `user` does not exist in the current database.
-2021-05-23 02:52:42 error: [POST] /users >> StatusCode:: 400, Message:: email must be an email
