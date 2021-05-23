@@ -15,6 +15,7 @@ describe('Testing Auth', () => {
       const userData: CreateUserDto = {
         email: 'test@email.com',
         password: 'q1w2e3r4',
+        name:"test",
       };
 
       const authRoute = new AuthRoute();
@@ -24,6 +25,7 @@ describe('Testing Auth', () => {
       users.create = jest.fn().mockReturnValue({
         id: 1,
         email: userData.email,
+        name:userData.name,
         password: await bcrypt.hash(userData.password, 10),
       });
 
@@ -37,6 +39,7 @@ describe('Testing Auth', () => {
       const userData: CreateUserDto = {
         email: 'test@email.com',
         password: 'q1w2e3r4',
+        name:"test",
       };
 
       const authRoute = new AuthRoute();
@@ -45,6 +48,7 @@ describe('Testing Auth', () => {
       users.findUnique = jest.fn().mockReturnValue({
         id: 1,
         email: userData.email,
+        name:userData.name,
         password: await bcrypt.hash(userData.password, 10),
       });
 
