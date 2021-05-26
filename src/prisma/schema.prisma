@@ -43,3 +43,8 @@ model Address {
   invoiceTo     Invoice? @relation("to")
   invoiceFrom   Invoice? @relation("from")
 }
+
+model Item {
+  id Int @id @default(autoincrement())
+
+}
