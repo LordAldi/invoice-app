@@ -10,7 +10,6 @@ class InvoicesController {
   public getInvoices = async (req: RequestWithUser, res: Response, next: NextFunction): Promise<void> => {
     try {
       const userId = Number(req.user.id);
-console.log(userId);
 
       const findAllInvoicesData: Invoice[] = await this.invoiceService.findAllInvoice(userId);
 
