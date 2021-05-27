@@ -31,6 +31,7 @@ model Invoice {
   date        String
   paymentTerm String
   description String
+  items       Item[]
 
 }
 
@@ -45,6 +46,10 @@ model Address {
 }
 
 model Item {
-  id Int @id @default(autoincrement())
-
+  id        Int      @id @default(autoincrement())
+  invoice   Invoice? @relation(fields: [invoiceId], references: [id])
+  invoiceId Int?
+  name      String   @unique
+  price     Int
+  quantity  Int
 }
